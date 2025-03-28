@@ -7,32 +7,58 @@ can draw a square, pentagon, and hexagon with a single function
 """
 
 
-import turtle                           # Tell Python we want to work with the turtle
-turtle.setup (width=600, height=600)    # Set the size of the window
+import turtle  # Tell Python we want to work with the turtle
 
-tina = turtle.Turtle()                  # Create a turtle named tina
+# Set up the window
+turtle.setup(width=600, height=600)
 
-tina.shape('turtle')                    # Set the shape of the turtle to a turtle
-tina.speed(2)                           # Make the turtle move as fast, but not too fast. 
+tina = turtle.Turtle()
 
-def draw_polygon(sides):
+tina.shape('turtle')
 
-    angle = ... # Calculate angle from number of sides
-    
-    for i in range(...):                 # Loop through the number of sides
-        ...                              # Move tina forward by the forward distance
-        ...                              # Turn tina left by the left turn
+tina.speed(2)
 
+def draw_polygon(sides, side_length):
+    angle = 360 / sides  
+    for _ in range(sides):
+        tina.forward(side_length)
+        tina.left(angle)
 
-draw_polygon(...)                        # Draw a square
+# Function to draw a square
+def draw_square(side_length):
+    tina.penup()
+    tina.goto(-100, 100)  
+    tina.pendown()
+    for _ in range(4):
+        tina.forward(side_length)
+        tina.left(90)
 
-...                                      # Move tina to another spot on the screen
+# Function to draw a pentagon
+def draw_pentagon(side_length):
+    tina.penup()
+    tina.goto(30, 90)
+    tina.pendown()
+    for _ in range(5):
+        tina.forward(side_length)
+        tina.left(72)  
 
-draw_polygon(...)                        # Draw a pentagon
+# Function to draw a hexagon
+def draw_hexagon(side_length):
+    tina.penup()
+    tina.goto(-100, -90) 
+    tina.pendown()
+    for _ in range(6):
+        tina.forward(side_length)
+        tina.left(60) 
 
-...                                      # Move tina to another spot on the screen
+draw_square(50)   
+tina.penup()
+tina.goto(200, 0)  
+tina.pendown()
+draw_pentagon(75)  
+tina.penup()
+tina.goto(-200, 0) 
+tina.pendown()
+draw_hexagon(100)  
 
-draw_polygon(...)                        # Draw a hexagon
-
-
-turtle.exitonclick()                     # Close the window when we click on it
+turtle.exitonclick()       

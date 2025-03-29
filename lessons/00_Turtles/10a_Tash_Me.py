@@ -10,7 +10,7 @@ Hint: See 08a_More Turtle Programs, section 'Change the Background Image' and
 """
 
 import turtle
-
+START HERER
 def set_background_image(window, emoji):
     """Set the background image of the turtle window to the image with the given name."""
 

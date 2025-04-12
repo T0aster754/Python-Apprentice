@@ -6,7 +6,7 @@ Color Lines
 """
 
 import turtle                           # Tell Python we want to work with the turtle
-turtle.setup (width=600, height=600)    # Set the size of the window
+turtle.setup (width=600, height=600)    # Set the size of the windowgfbfvsdsgdfg
 
 tina = turtle.Turtle()                  # Create a turtle named tina
 
@@ -14,18 +14,18 @@ tina.shape('turtle')                    # Set the shape of the turtle to a turtl
 tina.speed(2)                           # Make the turtle move as fast, but not too fast. 
 forward = 50
 left = 90
-colors = [ 'red', 'blue', 'black', 'orange']
+colors = [ 'red', 'blue', 'black', 'green']
 
 for color in colors:
     tina.color(color)
     tina.forward(forward)
     tina.left(left)
 
-for color in colors:
-    tina.color(colors[-1, -2, -3, -4])
+
+for color in colors[::-1]:
+    tina.color(color)
     tina.forward(forward)
     tina.left(left)
-
 
 
 

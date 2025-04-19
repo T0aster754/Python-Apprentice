@@ -42,8 +42,8 @@ if user == 0-2:
     print("baby")
 
 else user == 3-5:
-    print("toddler")
-    
+    print("basically a baby")
+
 # Use if statements to determine the age group
 # and create a message
 

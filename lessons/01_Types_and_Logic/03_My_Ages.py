@@ -38,11 +38,28 @@ window.withdraw() # Hide the window; we just want to see pop ups
 
 age =  simpledialog.askfloat("Your Age", "How old are you?")
 
-if user == 0-2:
-    print("baby")
+if age<=2:
+   print("baby")
+elif age<=5:
+    print("toddler")
+elif age<=12:
+    print("child")
+elif age<=19:
+    print("teen")
+elif age<=64:
+    print("adult")
+elif age>65:
+    print("senior")
+if age==17:
+    print("im a loser")
+if age==14:
+    print("im literally the coolest person on earth")
+      
 
-else user == 3-5:
-    print("basically a baby")
+
+
+
+   
 
 # Use if statements to determine the age group
 # and create a message

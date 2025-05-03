@@ -53,7 +53,7 @@ elif age>65:
 if age==17:
     print("im a loser")
 if age==14:
-    print("im literally the coolest person on earth")
+    print("same age as me")
       
 
 

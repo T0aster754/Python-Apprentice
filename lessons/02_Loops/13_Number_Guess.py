@@ -30,27 +30,55 @@ at the bottom of the editor screen; this program does not use the GUI.
 
 """
 
-import random
 
-def ask_integer(prompt):
-    """Function to ask the user for an integer"""
+import random
+from typing import NoReturn
+
+# ──────────────────────────────────────────────────────────────────────────────
+
+def ask_integer(prompt: str) -> int:
+    """Prompt repeatedly until a valid integer is entered."""
     while True:
         try:
             return int(input(prompt))
         except ValueError:
-            print("Please enter a valid number!")
+            print("Enter a number that is 0 100")
 
 
-# Pick the random number
+def pick_number() -> int:
+    """Return a random integer 1–100 **not** divisible by 7."""
+    n = random.randint(1, 100)
+    while n % 7 == 0:
+        n = random.randint(1, 100)
+    return n
 
-# In your loop:
 
-    # Get the user's guess
+def main() -> NoReturn:  # infinite runtime until user wins / Ctrl‑C
+    print("Welcome to the Number Guess Game!")
+    target = pick_number()
 
-    # If the user's guess is divisible by 7, tell the user to start over
+    while True:
+        guess = ask_integer("Guess a number between 1 and 100: ")
 
-    # If the user's guess is too high, tell the user
-    # If the user's guess is too low, tell the user
-    # If the user's guess is correct, tell the user and break out of the loop
+        if guess % 7 == 0:
+            print("nuh uh")
+            target = pick_number()
+            continue  # back to the top of the loop
+
+        if guess > target:
+            print("Too high!")
+        elif guess < target:
+            print("Too low!")
+        else:
+            print(f"You win ...")
+            break
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nGame interrupted. Goodbye!")
+
 
 
